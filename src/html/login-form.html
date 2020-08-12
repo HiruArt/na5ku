@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include('./modules/_head.html')
+<body class="page ">
+<div class="page__wrapper">
+    <div class="login-page">
+        <div class="login-page__inner">
+            <div class="login-page__logo">
+                @@include('../img/logo.svg')
+            </div>
+            <div class="login-page__content">
+                <div class="login-page__social">
+                    <div class="login-page__social-title">
+                        Войти с помощью:
+                    </div>
+                    <div class="login-page__social-list">
+                        <div class="login-page__social-item">
+                            <a href="#" class="login-page__social-link">
+                                @@include('../img/ico/Google.svg')
+                                Google
+                            </a>
+                        </div>
+                        <div class="login-page__social-item">
+                            <a href="#" class="login-page__social-link">
+                                @@include('../img/ico/Facebook.svg')
+                                Facebook
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="login-page__form site-form">
+                    <form action="#">
+                        <div class="form-group">
+                            <input class="form-control" type="text" placeholder="Email">
+                        </div>
+                        <div class="form-group">
+                            <input class="form-control" type="password" placeholder="Пароль" required>
+                            <a class="login-page__show-pass show-pass-js" href="#">
+                                @@include('../img/ico/eye-ico.svg')
+                            </a>
+                        </div>
+                    </form>
+                </div>
+                <div class="login-page__enter">
+                    <a href="./orders.html" class="login-page__enter-link site-btn">
+                        <span>Вход</span>
+                    </a>
+                    <a href="#" class="login-page__enter-forgotpass site-link">
+                        Забыли пароль?
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@@include('./modules/_scripts.html')
+</body>
+</html>

@@ -8,15 +8,13 @@
     <main class="page__content">
         @@include('./modules/_stock.html')
         @@include('./modules/_head-tabs.html')
-    </main>
 
-    <div class="content-block">
-        <div class="orders">
-            <div class="orders__list">
-                <div class="container">
+        <div class="content-block">
+            <div class="orders not-full-content container">
+                <div class="orders__list">
                     <div class="row">
                         <div class="col-md-6">
-                            <div class="orders__item">
+                            <a href="./project.html" class="orders__item">
                                 <div class="orders__row">
                                     <div class="orders__name">
                                         Курсовой проект
@@ -42,10 +40,10 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </a>
                         </div>
                         <div class="col-md-6">
-                            <div class="orders__item">
+                            <a href="#" class="orders__item">
                                 <div class="orders__row">
                                     <div class="orders__name">
                                         Эссе
@@ -71,10 +69,10 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </a>
                         </div>
                         <div class="col-md-6">
-                            <div class="orders__item">
+                            <a href="#" class="orders__item">
                                 <div class="orders__row">
                                     <div class="orders__name">
                                         Реферат
@@ -100,20 +98,13 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </a>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="orders__btn">
-                <div class="container">
-                    <button class="orders__btn-i site-btn">
-                        Добавить заказ
-                    </button>
-                </div>
-            </div>
         </div>
-    </div>
+    </main>
 
     @@include('./modules/_footer.html')
 

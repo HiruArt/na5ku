@@ -77,8 +77,28 @@ $(document).ready(function () {
     slidesPerView: 1.1,
     centeredSlides: true,
     loop: true,
+    breakpoints: {
+      550: {
+        slidesPerView: 2.1,
+      },
+      800: {
+        slidesPerView: 2.1,
+      },
+      1024: {
+        slidesPerView: 4.1,
+      },
+    }
   })
 
+  $('.login-page__show-pass').click(function (e) {
+    e.preventDefault();
+    var type = $(this).siblings('input').attr('type');
+    if(type == 'password'){
+      $(this).siblings().attr('type', 'text');
+    } else {
+      $(this).siblings().attr('type', 'password');
+    }
+  });
 
 });
 
