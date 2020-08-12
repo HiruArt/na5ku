@@ -1,0 +1,58 @@
+<div class="big-popup popup setting-btn-js modal fade" tabindex="-1" role="dialog" aria-labelledby="alertTodayModalLabel" aria-hidden="true">
+    <div class="modal-dialog  modal-lg modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    @@include('../../img/ico/cross-green-ico.svg')
+                </button>
+                <span class="modal-title">Данные профиля</span>
+            </div>
+            <div class="modal-body">
+                <form class="profile__from site-form" novalidate action="#">
+                    <div class="site-form__section">
+                        <div class="site-form__subtitle">Основные:</div>
+                        <div class="form-group">
+                            <input class="form-control" type="text" placeholder="Ваше имя">
+                        </div>
+                        <div class="form-group">
+                            <input class="form-control" type="text" placeholder="Ваш телефон" value="+380 (915) 100-112-799">
+                        </div>
+                        <div class="form-group">
+                            <input class="form-control" type="text" placeholder="Ваш e-mail" value="vladislav@na5ku.com">
+                        </div>
+                    </div>
+                    <div class="site-form__section">
+                        <div class="site-form__subtitle">Основные:</div>
+                        <div class="form-group">
+                            <input class="pwds2 form-control" id="pwdId" type="password" placeholder="Новый пароль" required>
+                            <div class="invalid-feedback">Пароли должны совпадать</div>
+                        </div>
+                        <div class="form-group">
+                            <input class="pwds2 form-control" id="cPwdId" type="password" placeholder="Повторить пароль" required>
+                            <div class="invalid-feedback">Пароли должны совпадать</div>
+                        </div>
+                    </div>
+                    <div class="site-form__section">
+                        <div class="site-form__subtitle">Дополнительно:</div>
+                        <div class="form-group site-form__select">
+                            <select class="form-control">
+                                <option selected>Ваш курс обучения</option>
+                                <option>option 1</option>
+                                <option>option 2</option>
+                                <option>option 3</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <input class="form-control" type="text" placeholder="ВУЗ">
+                        </div>
+                    </div>
+                    <div class="change-pass__form-btn">
+                        <button class="site-btn" type="submit">
+                            <span>Сохранить</span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
