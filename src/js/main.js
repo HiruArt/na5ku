@@ -100,6 +100,15 @@ $(document).ready(function () {
     }
   });
 
+  $(document).on('click', '.project__tabs-i', function (e) {
+    var actualTab = $(this).attr('data-tab');
+    $('.project__tabs-i').removeClass('active');
+    $(this).addClass('active');
+
+    $('.project__files-section').removeClass('active');
+    $('.project__files-section.' + actualTab).addClass('active');
+  });
+
 });
 
 

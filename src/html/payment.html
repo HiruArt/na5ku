@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include('./modules/_head.html')
+<body class="page ">
+<div class="page__wrapper">
+    @@include('./modules/_header.html')
+
+    <main class="page__content">
+        <div class="content-block">
+            <div class="project container full-content">
+                <div class="project__inner">
+                    <div class="project__head">
+                        <a href="./project.html" class="project__back">
+                            @@include('../img/ico/arrow-left-ico.svg')
+                        </a>
+                        <div class="project__title">
+                            Оплата
+                        </div>
+                    </div>
+                    <div class="project__table">
+                        <div class="project__table-coast">
+                            Стоимость заказа:
+                            <span>1200 UAH</span>
+                        </div>
+                        <div class="project__table-row">
+                            <span>
+                                Внесено
+                            </span>
+                            <span>
+                                <strong>1000 UAH</strong>
+                            </span>
+                        </div>
+                        <div class="project__table-row">
+                            <span>
+                                Осталось внести
+                            </span>
+                            <span class="orange">
+                                <strong>200 UAH</strong>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="project__promo site-form">
+                        <form action="#">
+                            <div class="site-form__section">
+                                <div class="site-form__subtitle">Применить промокод:</div>
+                                <div class="form-group">
+                                    <input class="pwds2 form-control" id="pwdId" type="password" placeholder="Например: NA5KU200">
+                                </div>
+                            </div>
+                            <div class="project__promo-btn">
+                                <button class="site-btn site-btn--orange" type="submit">
+                                    <span>Внести предоплату</span>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    @@include('./modules/_footer.html')
+
+</div>
+
+@@include('./modules/_scripts.html')
+</body>
+</html>

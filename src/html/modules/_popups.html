@@ -56,3 +56,81 @@
         </div>
     </div>
 </div>
+
+
+
+<div class="big-popup popup add-order-js modal fade" tabindex="-1" role="dialog" aria-labelledby="alertTodayModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    @@include('../../img/ico/cross-green-ico.svg')
+                </button>
+                <span class="modal-title">Добавить заказ</span>
+            </div>
+            <div class="modal-body">
+                <div class="add-order__head">
+                    <div class="add-order__head-list">
+                        <div class="add-order__head-i">
+                            <div class="add-order__head-i-txt">
+                                <span>
+                                    1.
+                                </span>
+                                Заполните онлайн заявку
+                            </div>
+                        </div>
+                        <div class="add-order__head-i">
+                            <div class="add-order__head-i-txt">
+                                <span>
+                                    2.
+                                </span>
+                                Сообщим стоимость за 2 часа
+                            </div>
+                        </div>
+                        <div class="add-order__head-i">
+                            <div class="add-order__head-i-txt">
+                                <span>
+                                    3.
+                                </span>
+                                Получите готовую работу
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <form class="add-order__form site-form" novalidate action="#">
+                    <div class="site-form__section">
+                        <div class="site-form__subtitle">Основные:</div>
+                        <div class="form-group">
+                            <input class="form-control" type="text" placeholder="Ваше имя">
+                        </div>
+                        <div class="form-group">
+                            <input class="form-control" type="text" placeholder="Ваш телефон" value="+380 (915) 100-112-799">
+                        </div>
+                        <div class="form-group">
+                            <input class="form-control" type="text" placeholder="Ваш e-mail" value="vladislav@na5ku.com">
+                        </div>
+                    </div>
+                    <div class="site-form__section">
+                        <div class="site-form__subtitle">Дополнительно:</div>
+                        <div class="form-group site-form__select">
+                            <select class="form-control">
+                                <option selected>Ваш курс обучения</option>
+                                <option>option 1</option>
+                                <option>option 2</option>
+                                <option>option 3</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <input class="form-control" type="text" placeholder="ВУЗ">
+                        </div>
+                    </div>
+                    <div class="change-pass__form-btn">
+                        <button class="site-btn" type="submit">
+                            <span>Добавить заказ</span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
