@@ -1045,7 +1045,7 @@ input{
     background: #F8F8F8;
     position: relative;
 
-    
+
   }
 
   &__head-i-txt{
@@ -1161,3 +1161,170 @@ input{
 }
 
 
+
+
+
+.chat{
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  background: white;
+  z-index: 200;
+
+  &__inner{
+    display: flex;
+    flex-direction: column;
+    padding: 0 20px 20px;
+    height: 100%;
+  }
+
+  &__close{
+    position: absolute;
+    top: 20px;
+    left: 20px;
+  }
+
+  &__top{
+    padding-bottom: 20px;
+  }
+
+  &__name{
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    color: #06081C;
+    margin-top: 20px;
+    text-align: center;
+  }
+
+  &__main{
+    max-height: 450px;
+    overflow: auto;
+    margin: 0 -20px;
+    padding: 0 20px 10px 15px;
+  }
+
+  &__data{
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 22px;
+    text-align: center;
+    color: rgba(6, 8, 28, 0.5);
+    margin-bottom: 20px;
+  }
+
+  &__incoming{
+    margin-bottom: 20px;
+    display: flex;
+
+    img{
+      width: 35px;
+      height: 100%;
+      margin-right: 5px;
+      margin-left: -5px;
+    }
+  }
+
+  &__incoming-text{
+    background: #FFFFFF;
+    box-shadow: 0px 5px 35px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    padding: 13px 20px;
+    width: 90%;
+  }
+
+  &__send{
+    margin-bottom: 20px;
+  }
+
+  &__send-txt{
+    width: 82%;
+    margin-left: auto;
+    background: #91C650;
+    box-shadow: 0px 15px 30px rgba(145, 198, 80, 0.1);
+    border-radius: 15px 15px 0px 15px;
+    padding: 14px 20px;
+    color: #ffffff;
+  }
+
+  &__bottom{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+  }
+
+  &__file{
+
+  }
+
+  &__add-file{
+    min-width: 42px;
+    min-height: 42px;
+    background: #91C650;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0;
+
+    svg{
+      width: 13px;
+      height: 13px;
+    }
+  }
+
+  &__input-file{
+    display: none;
+  }
+
+  &__input-wrap{
+    width: 100%;
+    margin: 0 20px;
+  }
+
+  &__input{
+    background: #FFFFFF;
+    border: 0.5px solid #CCCCCC;
+    box-sizing: border-box;
+    border-radius: 45px;
+    height: 52px;
+    padding-left: 17px;
+    width: 100%;
+
+    &::placeholder{
+      font-weight: 300;
+      font-size: 16px;
+      line-height: 19px;
+      color: rgba(6, 8, 28, 0.4);
+    }
+  }
+
+  &__send-btn-wrap{
+    min-width: 42px;
+    min-height: 42px;
+    background: #91C650;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    overflow: hidden;
+
+    svg{
+      width: 11px;
+      height: 13px;
+    }
+  }
+
+  &__send-btn{
+
+  }
+
+  &__files-block{
+
+  }
+
+}
