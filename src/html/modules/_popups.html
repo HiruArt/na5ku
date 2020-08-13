@@ -73,63 +73,178 @@
                     <div class="add-order__head-list">
                         <div class="add-order__head-i">
                             <div class="add-order__head-i-txt">
-                                <span>
-                                    1.
-                                </span>
-                                Заполните онлайн заявку
+                                <p>
+                                    <span>
+                                        1.
+                                    </span>
+                                    Заполните онлайн заявку
+                                </p>
                             </div>
                         </div>
                         <div class="add-order__head-i">
                             <div class="add-order__head-i-txt">
-                                <span>
-                                    2.
-                                </span>
-                                Сообщим стоимость за 2 часа
+                                <p>
+                                    <span>
+                                        2.
+                                    </span>
+                                    Сообщим стоимость за 2 часа
+                                </p>
                             </div>
                         </div>
                         <div class="add-order__head-i">
                             <div class="add-order__head-i-txt">
-                                <span>
-                                    3.
-                                </span>
-                                Получите готовую работу
+                                <p>
+                                    <span>
+                                        3.
+                                    </span>
+                                    Получите готовую работу
+                                </p>
                             </div>
                         </div>
                     </div>
                 </div>
                 <form class="add-order__form site-form" novalidate action="#">
                     <div class="site-form__section">
-                        <div class="site-form__subtitle">Основные:</div>
+                        <div class="site-form__subtitle">Тема заказа:</div>
                         <div class="form-group">
-                            <input class="form-control" type="text" placeholder="Ваше имя">
+                            <input class="form-control" type="text" placeholder="Например: Курсовая по чернению">
                         </div>
-                        <div class="form-group">
-                            <input class="form-control" type="text" placeholder="Ваш телефон" value="+380 (915) 100-112-799">
-                        </div>
-                        <div class="form-group">
-                            <input class="form-control" type="text" placeholder="Ваш e-mail" value="vladislav@na5ku.com">
-                        </div>
-                    </div>
-                    <div class="site-form__section">
-                        <div class="site-form__subtitle">Дополнительно:</div>
+                        <div class="site-form__subtitle">Тип заказа:</div>
                         <div class="form-group site-form__select">
                             <select class="form-control">
-                                <option selected>Ваш курс обучения</option>
+                                <option selected>Курсовая работа</option>
                                 <option>option 1</option>
                                 <option>option 2</option>
                                 <option>option 3</option>
                             </select>
                         </div>
+                        <div class="site-form__subtitle">Уровень:</div>
+                        <div class="form-group site-form__select">
+                            <select class="form-control">
+                                <option selected>Basic</option>
+                                <option>option 1</option>
+                                <option>option 2</option>
+                                <option>option 3</option>
+                            </select>
+                        </div>
+                        <div class="site-form__subtitle">Срок исполнения:</div>
+                        <div class="form-group site-form__select">
+                            <select class="form-control">
+                                <option selected>6 дней</option>
+                                <option>option 1</option>
+                                <option>option 2</option>
+                                <option>option 3</option>
+                            </select>
+                        </div>
+                        <div class="site-form__subtitle">Сдать в срок:</div>
                         <div class="form-group">
-                            <input class="form-control" type="text" placeholder="ВУЗ">
+                            <input class="form-control" type="text" placeholder="Например: до 2020.06.24 21:09">
+                        </div>
+                        <div class="form-group slider-wrap site-form__slider-style">
+                            <div class="slider-wrap">
+                                <div class="site-form__subtitle">Оригинальность:
+                                    <input class="slider-count" type="text" readonly>
+                                </div>
+                                <div class="slider"></div>
+                            </div>
+                        </div>
+                        <div class="site-form__subtitle">Требования:</div>
+                        <div class="form-group site-form__textarea">
+                            <textarea placeholder="Ваши требования к заказу"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <div class="site-form__file">
+                                <input type="file" multiple class="site-form__file" id="inputGroupFile03">
+                                <label class="" for="inputGroupFile03">
+                                    @@include('../../img/ico/plus-ico.svg')
+                                    <span>
+                                        Прикрепить файлы
+                                    </span>
+                                </label>
+                            </div>
+                            <div class="site-form__file-load">
+                                <div class="site-form__file-load-i">
+                                    Курсовая ТЗ.doc
+                                </div>
+                                <div class="site-form__file-load-i">
+                                    Примеры.pdf
+                                </div>
+                            </div>
+                        </div>
+                        <div class="add-order__coast">
+                            <div class="add-order__coast-txt">
+                                Предварительная стоимость:
+                                <span>
+                                    900 UAH
+                                </span>
+                            </div>
+                            <a href="javascript:void(0);" class="add-order__info" data-toggle="modal" data-target=".i-btn-js">
+                                @@include('../../img/ico/i-ico.svg')
+                            </a>
                         </div>
                     </div>
                     <div class="change-pass__form-btn">
-                        <button class="site-btn" type="submit">
+                        <button class="site-btn" type="submit" data-toggle="modal" data-target=".create-order-js">
                             <span>Добавить заказ</span>
                         </button>
                     </div>
                 </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="big-popup popup create-order create-order-js modal fade" tabindex="-1" role="dialog" aria-labelledby="alertTodayModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <a href="./orders.html" class="close">
+                    @@include('../../img/ico/cross-green-ico.svg')
+                </a>
+            </div>
+            <div class="modal-body">
+                <div class="create-order__content">
+                    <div class="create-order__txt">
+                        @@include('../../img/create-order-img.svg')
+                        Заказ успешно создан!
+                    </div>
+                    <div class="site-form__form-btn">
+                        <a href="./orders.html" class="site-btn">
+                            <span>Вернуться в заказы</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="small-popup i-btn-js modal fade" tabindex="-1" role="dialog" aria-labelledby="alertTodayModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="info-popup__content">
+                    <div class="info-popup__ico">
+                        @@include('../../img/info-popup-img.svg')
+                    </div>
+                    <div class="info-popup__txt">
+                        <p>
+                            1. На стоимость влияют: <strong>ип работы, объем и срок.</strong>
+                        </p>
+                        <p>
+                            2. Чем <strong>больше</strong> объем работы и короче срок, тем <strong>выше</strong> ее стоимость.
+                        </p>
+                        <p>
+                            3. После получения оценки заказа менеджером нашей компании <strong>Вы узнаете его итоговую стоимость</strong>
+                        </p>
+                    </div>
+
+                    <div class="info-popup__btn">
+                        <button class="site-btn" data-dismiss-modal="i-btn-js" aria-label="info">
+                            <span>Понятно</span>
+                        </button>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

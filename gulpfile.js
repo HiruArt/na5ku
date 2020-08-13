@@ -68,6 +68,7 @@ gulp.task('css-libs', () => {
       'node_modules/bootstrap/dist/css/bootstrap.css',
       // 'node_modules/bootstrap-select/dist/css/bootstrap-select.css',
       'node_modules/swiper/swiper-bundle.min.css',
+      'node_modules/nouislider/distribute/nouislider.css',
   ])
     .pipe(gulp.dest('dist/css/libs/'))
     .pipe(concat('libs.css'))
@@ -84,6 +85,7 @@ gulp.task('js-libs', () => {
       'node_modules/bootstrap/dist/js/bootstrap.bundle.js',
       'node_modules/bootstrap-select/dist/js/bootstrap-select.js',
       'node_modules/swiper/swiper-bundle.min.js',
+      'node_modules/nouislider/distribute/nouislider.js',
     ])
     .pipe(gulp.dest('dist/js/libs/'))
     .pipe(concat('libs.js'))

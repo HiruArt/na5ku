@@ -193,6 +193,7 @@ input{
     line-height: 19px;
     color: $black;
     margin-bottom: 1rem;
+    display: flex;
   }
 
   .form-group{
@@ -260,7 +261,6 @@ input{
 
     label{
       display: flex;
-      justify-content: center;
       align-items: center;
 
       svg{
@@ -273,6 +273,122 @@ input{
         font-size: 16px;
         line-height: 19px;
         color: $black;
+      }
+    }
+
+    &-load{
+      display: flex;
+      flex-wrap: wrap;
+      margin: 15px 0;
+
+      & > div {
+        background: $orange;
+        border-radius: 30px;
+        padding: 8px 30px 8px 10px;
+        font-weight: 500;
+        font-size: 13px;
+        line-height: 15px;
+        color: #FFFFFF;
+        margin-right: 10px;
+        margin-bottom: 10px;
+        cursor: pointer;
+        position: relative;
+
+        &:after{
+          content: '';
+          right: 12px;
+          top: 50%;
+          transform: translateY(-50%);
+          background: url("../img/ico/mini-cross-ico.svg") center/contain no-repeat;
+          width: 9px;
+          height: 9px;
+          position: absolute;
+        }
+      }
+    }
+
+
+  }
+
+  &__textarea{
+    display: flex;
+    width: 100%;
+
+    textarea{
+      border: 1px solid #CCCCCC;
+      box-sizing: border-box;
+      border-radius: 15px;
+      resize: none;
+      height: 95px;
+      width: 101%;
+      padding: 15px;
+
+      &::placeholder{
+        font-weight: 300;
+        font-size: 16px;
+        line-height: 19px;
+        color: rgba(6, 8, 28, 0.45);
+      }
+    }
+  }
+
+  &__slider-style{
+
+    .site-form__subtitle{
+      position: relative;
+
+      &:after{
+        content: '%';
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 21px;
+        color: $green;
+      }
+    }
+
+    .slider-count{
+      margin-left: 5px;
+      height: auto !important;
+      min-height: auto !important;
+      display: inline-flex;
+      border: none !important;
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 21px;
+      color: $green !important;
+      width: 34px;
+      text-align: right;
+    }
+
+    .noUi-connect{
+      background: $green;
+    }
+
+    .noUi-horizontal {
+      height: auto;
+      box-shadow: none;
+      border: 0;
+    }
+
+    .noUi-connects{
+      border-radius: 0;
+      height: 6px;
+      border: none;
+      background: #E6E6E8;
+    }
+
+    .noUi-handle{
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      outline: none;
+      background: white;
+      box-shadow: none;
+      border: 5px solid $green;
+      top: -9px;
+
+      &:before, &:after{
+        display: none;
       }
     }
   }
@@ -1026,38 +1142,136 @@ input{
 .add-order{
   &__head{
     margin-bottom: 30px;
-
   }
 
   &__head-list{
     display: flex;
     justify-content: space-between;
-    min-height: 57px;
-    margin: 0 -16px;
+    margin: 0 -15px;
   }
 
   &__head-i{
-    width: 30%;
+    width: 26%;
     display: flex;
+    align-items: center;
     justify-content: center;
-    height: 100%;
-    padding: 0 16px;
+    padding-left: 15px;
     background: #F8F8F8;
     position: relative;
+    height: 58px;
 
-    
+    &:first-child:before{
+      display: none;
+    }
+
+    &:after{
+      content: '';
+      border-style: solid;
+      border-width: 29px 0 29px 23px;
+      border-color: transparent transparent transparent #f8f8f8;
+      position: absolute;
+      right: -23px;
+    }
+
+    &:last-child:after{
+      display: none;
+    }
+
+    &:first-child &-txt{
+      &:before, &:after{
+        display: none;
+      }
+    }
   }
 
   &__head-i-txt{
     max-width: 80px;
-    font-size: 12px;
+    font-size: 10px;
     line-height: 14px;
+    color: $black;
+    height: 100%;
+    align-items: center;
+    display: flex;
+
+    @include from-350{
+      font-size: 12px;
+    }
+
+    &:before{
+      content: '';
+      position: absolute;
+      left: -23px;
+      top: 0;
+      border-style: solid;
+      border-width: 0 23px 29px 0;
+      border-color: transparent #f8f8f8 transparent transparent;
+    }
+
+    &:after{
+      content: '';
+      position: absolute;
+      left: -23px;
+      bottom: 0;
+      border-style: solid;
+      border-width: 0 0 29px 23px;
+      border-color: transparent transparent #f8f8f8 transparent;
+    }
+
+    p{
+      margin: 0;
+
+      span{
+        color: $orange;
+        float: left;
+        margin-right: 3px;
+      }
+    }
+  }
+
+  &__coast{
+    position: relative;
+    background: #FFFFFF;
+    box-shadow: 0px 5px 35px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    margin-bottom: 30px;
+    padding: 25px 15px;
+  }
+
+  &__coast-txt{
+    font-weight: 500;
+    font-size: 25px;
+    line-height: 33px;
+    text-align: center;
+    letter-spacing: -0.02em;
     color: $black;
 
     span{
+      font-weight: 500;
       color: $orange;
+      display: block;
     }
   }
+
+  &__info{
+    position: absolute;
+    top: 18px;
+    right: 18px;
+
+    &:before{
+      content: '';
+      left: -15px;
+      top: -15px;
+      width: calc(100% + 30px);
+      height: calc(100% + 30px);
+      position: absolute;
+    }
+
+    svg{
+      width: 24px;
+      height: 24px;
+    }
+  }
+
 
 }
 
@@ -1159,5 +1373,89 @@ input{
     border: 0;
   }
 }
+
+.small-popup{
+  background: rgba(0, 0, 0, 0.7);
+
+  .modal-content{
+    border-radius: 15px;
+    background: #F5F5F5;
+    padding: 20px 10px;
+  }
+
+  .modal-dialog {
+    margin: 1rem;
+  }
+
+  .info-popup{
+
+    &__content{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    &__ico{
+
+      svg{
+        width: 98px;
+        height: 98px;
+      }
+    }
+
+    &__txt{
+
+      p{
+        font-size: 16px;
+        line-height: 22px;
+        text-align: center;
+        letter-spacing: 0.01em;
+        color: $black;
+        margin: 25px 0;
+      }
+    }
+
+    &__btn{
+      display: flex;
+      justify-content: center;
+      width: 100%;
+    }
+
+  }
+}
+
+.create-order{
+
+  &__content{
+    min-height: calc(100vh - 100px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .site-form__form-btn{
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  &__txt{
+    height: 65vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+    font-size: 25px;
+    line-height: 30px;
+    text-align: center;
+    color: $black;
+
+    svg{
+      margin-bottom: 20px;
+    }
+  }
+
+}
+
 
 
