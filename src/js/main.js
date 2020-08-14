@@ -90,6 +90,14 @@ $(document).ready(function () {
     }
   })
 
+  var faqTabSlider = new Swiper('.faq-tab-slider-js', {
+    // Optional parameters
+    slidesPerView: 'auto',
+    spaceBetween: 10,
+    centeredSlides: true,
+    loop: true,
+  });
+
   $('.login-page__show-pass').click(function (e) {
     e.preventDefault();
     var type = $(this).siblings('input').attr('type');
