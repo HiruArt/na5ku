@@ -167,12 +167,50 @@ $(document).ready(function () {
     $(this).remove();
   });
 
-  $('button[data-dismiss-modal="i-btn-js"]').click(function(e){
+  $('button[data-dismiss-modal="i-btn-js"], .i-btn-js').click(function(e){
     $(this).closest('.i-btn-js').modal('hide');
     setTimeout(function () {
       $('body').addClass('modal-open');
-    }, 100);
+    }, 400);
   });
+
+  $(document).click(function (e) {
+    console.log(e.target);
+  });
+
+
+  // var chatCount = 0;
+  // chatCount = $('.site-form__file-load > div').length;
+  // $('.chat__add-file.count-file').attr('data-count', chatCount);
+  // console.log(chatCount);
+
+  $('a.chat__add-file').click(function (e) {
+    e.preventDefault();
+    $('input[type="file"].chat__input-file').click();
+  });
+
+  $('input[type="file"].chat__input-file').change(function (e) {
+    if($(this).val() == ''){
+      return;
+    }
+    readURLchat(this);
+  });
+
+  function readURLchat(input) {
+    if (input.files.length > 0) {
+      var container = $(document).find('.chat__files-block .site-form__file-load');
+      var files = $(input).prop("files");
+            $(files).each(function () {
+        container.append('<div>' + $(this).prop("name") + '</div>');
+      });
+
+      console.log($(input).prop('files'));
+      //
+      // var chatCount = $('.site-form__file-load > div').length;
+      // $('.chat__add-file.count-file').attr('data-count', chatCount);
+
+    }
+  }
 
 });
 

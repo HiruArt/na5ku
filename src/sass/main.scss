@@ -126,6 +126,11 @@ input{
   padding-right: 20px;
   padding-left: 20px;
 }
+
+a:hover{
+  color: $orange;
+  opacity: 1;
+}
 /*fix bootstrap styles of 15 to 20 end*/
 
 .full-content{
@@ -679,6 +684,38 @@ input{
 
   }
 
+  &__plus-btn{
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    z-index: 100;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: #91C650;
+    box-shadow: 0 20px 40px rgba(145, 198, 80, 0.5);
+    border-radius:50%;
+
+    svg{
+      width: 19px;
+      height: 19px;
+    }
+    //
+    //&:after{
+    //  content: '';
+    //  position: absolute;
+    //  top: 0;
+    //  right: 0;
+    //  display: block;
+    //  width: 45px;
+    //  height: 45px;
+    //  background: url("../img/ico/chact-btn.svg") center center no-repeat;
+    //}
+  }
+
 
 }
 
@@ -1131,11 +1168,17 @@ input{
   }
 
   &__promo{
-    padding-top: 20px;
+    margin-top: 60px;
+    padding-bottom: 20px;
 
     .site-form__subtitle{
       font-weight: 400;
     }
+  }
+
+  &__promo-btn{
+    display: flex;
+    justify-content: center;
   }
 
 }
@@ -1405,6 +1448,7 @@ input{
 }
 
 .popup{
+  background: white;
 
   .modal-dialog{
     margin: 0;
@@ -1420,6 +1464,7 @@ input{
     border-radius: 0;
     min-height: max-content;
     padding-bottom: 30px;
+    border: none;
   }
 
   .modal-header{
@@ -1454,6 +1499,7 @@ input{
     border-radius: 15px;
     background: #F5F5F5;
     padding: 20px 10px;
+    border: none;
   }
 
   .modal-dialog {
@@ -1743,6 +1789,15 @@ input{
   }
 
   &__files-block{
+    .site-form__file-load{
+      margin-bottom: 0;
+      margin-top: 0;
+
+      & > div{
+        margin-bottom: 0;
+        margin-top: 10px;
+      }
+    }
 
   }
 
