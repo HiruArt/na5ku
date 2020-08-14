@@ -43,6 +43,28 @@ $(document).ready(function () {
     $('body').removeClass('modal-open');
   });
 
+  $('.phone-field').inputmask({"mask": "+38 (099) 99-99-999"});
+
+  $('.phone-field').keyup(function () {
+    console.log($(this).val());
+    if($(this).val().indexOf('_') === -1 && $(this).val().length > 0) {
+      $(this).parent().addClass('valid');
+    } else {
+      $(this).parent().removeClass('valid');
+    }
+  });
+
+  $('.mail-field').keyup(function () {
+    var reg = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    console.log(reg.test($(this).val()) !== false);
+    if(reg.test($(this).val()) !== false) {
+      $(this).parent().addClass('valid');
+    } else {
+      $(this).parent().removeClass('valid');
+    }
+  });
+
+
   // checking browser for WEBP
   // hasWebP().then(function () {
   //

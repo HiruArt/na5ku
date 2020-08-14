@@ -1576,7 +1576,19 @@ a:hover{
 
 }
 
-
+.form-group.valid{
+  &:after{
+    content: '';
+    display: block;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 20px;
+    width: 14px;
+    height: 10px;
+    background: url("../img/ico/check-g.svg") center center no-repeat;
+  }
+}
 
 .chat-btn{
   position: fixed;
