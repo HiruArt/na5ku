@@ -1532,7 +1532,29 @@ input{
 
 
 
+.chat-btn{
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  z-index: 100;
+  width: 60px;
+  height: 60px;
 
+  background: #91C650;
+  box-shadow: 0 20px 40px rgba(145, 198, 80, 0.5);
+  border-radius:50%;
+
+  &:after{
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: block;
+    width: 45px;
+    height: 45px;
+    background: url("../img/ico/chact-btn.svg") center center no-repeat;
+  }
+}
 
 
 .chat{
@@ -1543,6 +1565,12 @@ input{
   width: 100%;
   background: white;
   z-index: 200;
+  transform: translateX(-100%);
+  transition: 0.3s;
+
+  &.open{
+    transform: translateX(0);
+  }
 
   &__inner{
     display: flex;
@@ -1639,8 +1667,28 @@ input{
     justify-content: center;
     align-items: center;
     border-radius: 50%;
-    overflow: hidden;
     margin: 0;
+    position: relative;
+
+    &.count-file:after{
+      content: attr(data-count);
+      position: absolute;
+      background: #FFA546;
+      border: 2px solid #FFFFFF;
+      width: 20px;
+      height: 20px;
+      top: -5px;
+      right: -5px;
+      z-index: 2;
+      color: #ffffff;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: 500;
+      font-size: 11px;
+      line-height: 15px;
+    }
 
     svg{
       width: 13px;

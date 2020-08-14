@@ -33,6 +33,15 @@ if (UAString.indexOf("Trident") !== -1 && UAString.indexOf("rv:10") !== -1)
 
 $(document).ready(function () {
 
+  $('.chat-btn').click(function () {
+    $('.chat').addClass('open');
+    $('body').addClass('modal-open');
+  });
+
+  $('.chat .close').click(function () {
+    $('.chat').removeClass('open');
+    $('body').removeClass('modal-open');
+  });
 
   // checking browser for WEBP
   // hasWebP().then(function () {
