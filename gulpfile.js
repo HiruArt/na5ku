@@ -81,7 +81,7 @@ gulp.task('css-libs', () => {
 gulp.task('js-libs', () => {
   return gulp.src([
       'node_modules/jquery/dist/jquery.min.js',
-      // 'node_modules/inputmask/dist/jquery.inputmask.js',
+      'node_modules/inputmask/dist/jquery.inputmask.js',
       'node_modules/bootstrap/dist/js/bootstrap.bundle.js',
       'node_modules/bootstrap-select/dist/js/bootstrap-select.js',
       'node_modules/swiper/swiper-bundle.min.js',
