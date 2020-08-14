@@ -564,6 +564,13 @@ a:hover{
 
   &__list{
 
+    .row {
+      margin: 0 -5px;
+
+      & > div{
+        padding: 0 5px;
+      }
+    }
   }
 
   &__list-empty{
@@ -1316,6 +1323,11 @@ a:hover{
     }
   }
 
+  &__btn{
+    display: flex;
+    justify-content: center;
+  }
+
 }
 
 .faq-page{
@@ -1493,6 +1505,7 @@ a:hover{
 }
 
 .small-popup{
+  z-index: 1051;
   background: rgba(0, 0, 0, 0.7);
 
   .modal-content{
@@ -1576,18 +1589,32 @@ a:hover{
 
 }
 
-.form-group.valid{
-  &:after{
-    content: '';
-    display: block;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    right: 20px;
-    width: 14px;
-    height: 10px;
-    background: url("../img/ico/check-g.svg") center center no-repeat;
+.form-group{
+
+  &.valid:after {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      right: 20px;
+      width: 14px;
+      height: 10px;
+      background: url("../img/ico/check-g.svg") center center no-repeat;
   }
+
+  &.novalid:after {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      right: 20px;
+      width: 14px;
+      height: 10px;
+      background: url("../img/ico/cross-red.svg") center/contain no-repeat;
+  }
+
 }
 
 .chat-btn{

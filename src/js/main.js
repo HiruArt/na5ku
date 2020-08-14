@@ -196,15 +196,28 @@ $(document).ready(function () {
     }, 400);
   });
 
-  $(document).click(function (e) {
-    console.log(e.target);
+  $(document).on('click', '.site-btn-form-valid-js', function (e) {
+    e.preventDefault();
+    var form = $(this).closest('form.site-form-need-valid-js');
+    var formInput = form.find('input.required');
+
+    formInput.each(function () {
+      if($(this).val().length != 0){
+        $(this).parent().addClass('valid');
+        $(this).parent().removeClass('novalid');
+      } else {
+        $(this).parent().addClass('novalid');
+        $(this).parent().removeClass('valid');
+      }
+    });
+
+    if(form.find('.novalid').length == 0 && form.find('.valid').length > 0){
+      /*valid susses ajax*/
+      $('.create-order-js').modal('show');
+    }
   });
 
 
-  // var chatCount = 0;
-  // chatCount = $('.site-form__file-load > div').length;
-  // $('.chat__add-file.count-file').attr('data-count', chatCount);
-  // console.log(chatCount);
 
   $('a.chat__add-file').click(function (e) {
     e.preventDefault();
@@ -221,18 +234,32 @@ $(document).ready(function () {
   function readURLchat(input) {
     if (input.files.length > 0) {
       var container = $(document).find('.chat__files-block .site-form__file-load');
+      console.log(container);
       var files = $(input).prop("files");
-            $(files).each(function () {
+        $(files).each(function () {
         container.append('<div>' + $(this).prop("name") + '</div>');
       });
 
       console.log($(input).prop('files'));
-      //
-      // var chatCount = $('.site-form__file-load > div').length;
-      // $('.chat__add-file.count-file').attr('data-count', chatCount);
 
+      var chatCount = $('.site-form__file-load > div').length;
+      console.log(chatCount);
+      $('.chat__add-file').addClass('count-file');
+      $('.chat__add-file').attr('data-count', chatCount);
     }
   }
+
+  $(document).on('click', '.chat__files-block .site-form__file-load div', function (e) {
+    $(this).remove();
+    var chatCount = $('.site-form__file-load > div').length;
+    if(chatCount == 0){
+      $('.chat__add-file').removeClass('count-file');
+      $('.chat__add-file').attr('data-count', '');
+    } else {
+      $('.chat__add-file').addClass('count-file');
+      $('.chat__add-file').attr('data-count', chatCount);
+    }
+  });
 
 });
 

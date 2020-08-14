@@ -103,11 +103,11 @@
                         </div>
                     </div>
                 </div>
-                <form class="add-order__form site-form" novalidate action="#">
+                <form class="add-order__form site-form site-form-need-valid-js">
                     <div class="site-form__section">
                         <div class="site-form__subtitle">Тема заказа:</div>
                         <div class="form-group">
-                            <input class="form-control" type="text" placeholder="Например: Курсовая по чернению">
+                            <input class="form-control required" type="text" placeholder="Например: Курсовая по чернению">
                         </div>
                         <div class="site-form__subtitle">Тип заказа:</div>
                         <div class="form-group site-form__select">
@@ -138,7 +138,7 @@
                         </div>
                         <div class="site-form__subtitle">Сдать в срок:</div>
                         <div class="form-group">
-                            <input class="form-control" type="text" placeholder="Например: до 2020.06.24 21:09">
+                            <input class="form-control required" type="text" placeholder="Например: до 2020.06.24 21:09">
                         </div>
                         <div class="form-group slider-wrap site-form__slider-style">
                             <div class="slider-wrap">
@@ -163,12 +163,12 @@
                                 </label>
                             </div>
                             <div class="site-form__file-load">
-                                <div class="site-form__file-load-i">
-                                    Курсовая ТЗ.doc
-                                </div>
-                                <div class="site-form__file-load-i">
-                                    Примеры.pdf
-                                </div>
+                                <!--<div class="site-form__file-load-i">-->
+                                    <!--Курсовая ТЗ.doc-->
+                                <!--</div>-->
+                                <!--<div class="site-form__file-load-i">-->
+                                    <!--Примеры.pdf-->
+                                <!--</div>-->
                             </div>
                         </div>
                         <div class="add-order__coast">
@@ -183,8 +183,8 @@
                             </a>
                         </div>
                     </div>
-                    <div class="change-pass__form-btn">
-                        <button class="site-btn" type="submit" data-toggle="modal" data-target=".create-order-js">
+                    <div class="add-order__btn">
+                        <button class="site-btn site-btn-form-valid-js" type="submit" >
                             <span>Добавить заказ</span>
                         </button>
                     </div>
