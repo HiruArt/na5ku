@@ -70,6 +70,11 @@ ul{
   list-style: none;
 }
 
+.body{
+  margin:0;
+  padding:0;
+}
+
 body.hidden{
   @include for-992{
     overflow: hidden;
@@ -136,16 +141,25 @@ a:hover{
 .full-content{
   display: flex;
   flex-direction: column;
-  min-height: calc(100vh - 90px);
+  //min-height: calc(100vh - 150px);
   padding-bottom: 60px;
+  //padding-bottom: 30px;
+  padding-top: 20px;
 }
 
 .not-full-content{
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  min-height: calc(65vh - 21px);
-  padding-bottom: 60px;
+  //min-height: 20vh;
+  //padding-bottom: 60px;
+  padding-top: 20px;
+  //min-height: 41vh;
+  //padding-bottom: 60px;
+}
+
+.iphone .not-full-content {
+  //min-height: calc(41vh - 60px);
 }
 
 .site-btn{
@@ -403,15 +417,61 @@ a:hover{
 .page__wrapper{
   overflow: hidden;
   position: relative;
-  min-height: 100vh;
+  //min-height: 100vh;
   background-color: $darkblue;
+
+  &:after{
+    content: '';
+    width: 100%;
+    height: 200px;
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    background: #ffffff;
+    z-index: 1;
+  }
+}
+
+.page-flow-wrap{
+  height: calc(100vh - 59px);
+  overflow: auto;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.iphone .page-flow-wrap{
+  height: calc(100vh - 120px);
 }
 
 
 .content-block{
   background: white;
   border-radius: 30px 30px 0 0;
-  padding-top: 20px;
+  //padding-top: 20px;
+  //min-height: 55vh;
+  //min-height: 376px;
+  //min-height: calc(100vh - 289px);
+  min-height: calc(100vh - 349px);
+  position: relative;
+  z-index: 2;
+  //padding-bottom: 40px;
+
+  @media (min-height: 700px) and (max-width: 600px){
+    //min-height: 75vh;
+  }
+
+  &--orders{
+    //padding-bottom: 20px;
+
+    .swiper-container{
+      //overflow: inherit;
+    }
+  }
+}
+
+
+.iphone .content-block{
+  min-height: calc(100vh - 349px);
 }
 
 .header{
@@ -496,14 +556,21 @@ a:hover{
   &__slider-link{
     display: flex;
     padding: 0 5px;
+    height: 90px;
 
     picture{
       width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
 
     img{
       border-radius: 5px;
       width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
   }
 }
@@ -512,17 +579,27 @@ a:hover{
   margin-bottom: 20px;
 
   &__inner{
+    padding-left: 20px;
+    padding-right: 20px;
+    overflow: inherit;
 
+    //&.swiper-container {
+    //  overflow: inherit !important;
+    //}
   }
 
   &__nav{
     display: flex;
     margin: 0 -3px;
     justify-content: space-between;
+
+    @include from-550{
+      justify-content: space-around;
+    }
   }
 
   &__nav-item{
-
+    width: fit-content;
   }
 
   &__nav-link{
@@ -538,24 +615,44 @@ a:hover{
     transition: .2s all;
     white-space: nowrap;
 
+    &:hover{
+      opacity: .35;
+      color: #FFFFFF;
+    }
+
     @include from-350{
       font-size: 17px;
     }
 
-    &.active{
-      opacity: 1;
+    //&.active{
+    //  opacity: 1;
+    //
+    //  &:before{
+    //    content: '';
+    //    width: 8px;
+    //    height: 8px;
+    //    background: $orange;
+    //    border-radius: 50%;
+    //    position: absolute;
+    //    transform: translateX(-50%);
+    //    left: 50%;
+    //    bottom: -4px;
+    //  }
+    //}
+  }
+  &__nav-item.swiper-slide-thumb-active &__nav-link{
+    opacity: 1;
 
-      &:before{
-        content: '';
-        width: 8px;
-        height: 8px;
-        background: $orange;
-        border-radius: 50%;
-        position: absolute;
-        transform: translateX(-50%);
-        left: 50%;
-        bottom: -4px;
-      }
+    &:before{
+      content: '';
+      width: 8px;
+      height: 8px;
+      background: $orange;
+      border-radius: 50%;
+      position: absolute;
+      transform: translateX(-50%);
+      left: 50%;
+      bottom: -4px;
     }
   }
 }
@@ -563,6 +660,8 @@ a:hover{
 .orders{
 
   &__list{
+    //padding-bottom: 20px;
+    padding-bottom: 50px;
 
     .row {
       margin: 0 -5px;
@@ -578,7 +677,8 @@ a:hover{
     height: 100%;
     align-items: center;
     justify-content: center;
-    min-height: 30vh;
+    //min-height: 41vh;
+    min-height: 20vh;
 
     p{
       margin: 0;
@@ -684,11 +784,67 @@ a:hover{
   &__btn{
     display: flex;
     justify-content: center;
-    padding-bottom: 30px;
+    //padding-bottom: 30px;
+    //height: 60px;
+    //height: 120px;
+
   }
 
   &__btn-i{
+    transition: .15s all;
+    //position: absolute;
+    position: fixed;
+    //bottom: 50px;
+    bottom: 90px;
+    //bottom: 110px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
 
+    @media (min-height: 700px) {
+      bottom: 110px;
+    }
+
+    svg{
+      width: 19px;
+      height: 19px;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    svg path{
+      transition: .3s all;
+      visibility: hidden;
+      opacity: 0;
+    }
+  }
+
+  &__btn-i.fixed{
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    z-index: 100;
+    width: 60px;
+    height: 60px;
+    box-shadow: 0 20px 40px rgba(145,198,80,.5);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    left: auto;
+    transform: translateX(0);
+
+    span{
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    svg path{
+      visibility: visible;
+      opacity: 1;
+    }
   }
 
   &__plus-btn{
@@ -726,30 +882,61 @@ a:hover{
 
 }
 
+.iphone .orders__btn-i{
+  //bottom: 120px;
+}
+.iphone .orders__list{
+  padding-bottom: 40px;
+}
+
+.iphone .orders__list-empty,
+.iphone .not-full-content{
+  min-height: 25vh;
+}
+
+.iphone .chat__bottom{
+  //margin-bottom: 60px;
+  //margin-bottom: 120px;
+  margin-bottom: 60px;
+}
+
 .login-page{
   background: white;
+  //min-height: 100vh;
+
 
   &__inner{
     display: flex;
     width: 100%;
+    //min-height: calc(100vh - 60px);
+    //min-height: calc(100vh - 80px);
     min-height: 100vh;
     flex-direction: column;
     justify-content: space-between;
+    position: relative;
+    z-index: 2;
   }
 
   &__logo{
-    min-height: 200px;
+    height: 25vh;
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     justify-content: center;
+    margin-bottom: 15px;
+
+    svg{
+      height: 100%;
+      padding: 10px 0;
+    }
 
     @include from-350{
-      min-height: 265px;
+      //min-height: 265px;
     }
   }
 
   &__content{
     padding: 0 20px 20px;
+    //padding: 0 20px;
   }
 
   &__list{
@@ -855,6 +1042,10 @@ a:hover{
   }
 
 }
+
+//.iphone .login-page__inner{
+//  min-height: calc(100vh - 80px);
+//}
 
 .project{
   position: relative;
@@ -1169,13 +1360,15 @@ a:hover{
   }
 
   &__files-add{
-    margin-top: 50px;
+    //margin-top: 50px;
+    margin-top: 30px;
     display: flex;
     justify-content: center;
   }
 
   &__promo{
-    margin-top: 60px;
+    //margin-top: 60px;
+    margin-top: 30px;
     padding-bottom: 20px;
 
     .site-form__subtitle{
@@ -1661,7 +1854,8 @@ a:hover{
     display: flex;
     flex-direction: column;
     padding: 0 20px 20px;
-    height: 100%;
+    //height: 100%;
+    height: calc(100vh - 50px);
   }
 
   &__close{

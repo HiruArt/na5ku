@@ -129,6 +129,53 @@ $(document).ready(function () {
     loop: true,
   });
 
+  var ordersTab = new Swiper('.orders-tab-js', {
+    slidesPerView: 'auto',
+    spaceBetween: 10,
+    // slidesPerView: 3,
+    freeMode: true,
+    touchRatio: 0,
+    watchSlidesVisibility: true,
+    watchSlidesProgress: true,
+  });
+  var ordersContent = new Swiper('.orders-content-js', {
+    spaceBetween: 10,
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    autoHeight: true,
+    thumbs: {
+      swiper: ordersTab
+    },
+    on: {
+      init: function () {
+        ordersButtonChange();
+      },
+    },
+  });
+
+  ordersContent.on('transitionEnd', function(){
+    ordersButtonChange();
+  });
+
+  function ordersButtonChange(){
+    var windowHeight = $(window).height();
+    // var windowHeight = $('.page-flow-wrap').height();
+    var documentHeight = $(document).height();
+    var orderBtnOffsetTop = $('.orders__btn').offset().top;
+
+    if(orderBtnOffsetTop > windowHeight - 100){
+      $('.orders__btn-i').addClass('fixed');
+    } else {
+      $('.orders__btn-i').removeClass('fixed');
+    }
+    // alert(windowHeight +' - высота окна \n ' + documentHeight + ' - высота документа\n ' + orderBtnOffsetTop + '- высота кнопки');
+    // alert($('.content-block').height());
+  }
+
+
+
   $('.login-page__show-pass').click(function (e) {
     e.preventDefault();
     var type = $(this).siblings('input').attr('type');
@@ -259,6 +306,12 @@ $(document).ready(function () {
       $('.chat__add-file').addClass('count-file');
       $('.chat__add-file').attr('data-count', chatCount);
     }
+  });
+
+  var ecranHeight = $(window).height();
+  $('.login-page__inner').css({ 'min-height': ecranHeight });
+  $( window ).resize(function() {
+    $('.login-page__inner').css({ 'min-height': ecranHeight });
   });
 
 });

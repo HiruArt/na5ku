@@ -3,113 +3,250 @@
 @@include('./modules/_head.html')
 <body class="page ">
     <div class="page__wrapper">
-    @@include('./modules/_header.html')
+    <div class="page-flow-wrap">
+        @@include('./modules/_header.html')
+        <main class="page__content">
+            @@include('./modules/_stock.html')
+            <!--@@include('./modules/_head-tabs.html')-->
 
-    <main class="page__content">
-        @@include('./modules/_stock.html')
-        @@include('./modules/_head-tabs.html')
-
-        <div class="content-block">
-            <div class="orders not-full-content container">
-                <div class="orders__list">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <a href="./project.html" class="orders__item">
-                                <div class="orders__row">
-                                    <div class="orders__name">
-                                        Курсовой проект
-                                        <div class="orders__id">
-                                            ID: id-7739-626
-                                        </div>
-                                    </div>
-                                    <div class="orders__date">
-                                        10.06.20
-                                    </div>
-                                </div>
-                                <div class="orders__row">
-                                    <div class="orders__price">
-                                        Стоимость:
-                                        <div class="orders__price-i">
-                                            1200 UAH
-                                        </div>
-                                    </div>
-                                    <div class="orders__status">
-                                        Статус:
-                                        <div class="orders__status-i awaiting">
-                                            Ожидает предоплаты
-                                        </div>
-                                    </div>
-                                </div>
+            <div class="head-tabs">
+                <div class="head-tabs__inner swiper-container orders-tab-js">
+                    <div class="head-tabs__nav swiper-wrapper">
+                        <div class="head-tabs__nav-item swiper-slide">
+                            <a href="javascript:void(0);" class="head-tabs__nav-link">
+                                В работе
                             </a>
                         </div>
-                        <div class="col-md-6">
-                            <a href="#" class="orders__item">
-                                <div class="orders__row">
-                                    <div class="orders__name">
-                                        Эссе
-                                        <div class="orders__id">
-                                            ID: id-7739-703
-                                        </div>
-                                    </div>
-                                    <div class="orders__date">
-                                        12.05.20
-                                    </div>
-                                </div>
-                                <div class="orders__row">
-                                    <div class="orders__price">
-                                        Стоимость:
-                                        <div class="orders__price-i">
-                                            350 UAH
-                                        </div>
-                                    </div>
-                                    <div class="orders__status">
-                                        Статус:
-                                        <div class="orders__status-i completed">
-                                            Завершен
-                                        </div>
-                                    </div>
-                                </div>
+                        <div class="head-tabs__nav-item swiper-slide">
+                            <a href="javascript:void(0);" class="head-tabs__nav-link">
+                                Завершенные
                             </a>
                         </div>
-                        <div class="col-md-6">
-                            <a href="#" class="orders__item">
-                                <div class="orders__row">
-                                    <div class="orders__name">
-                                        Реферат
-                                        <div class="orders__id">
-                                            ID: id-8739-122
-                                        </div>
-                                    </div>
-                                    <div class="orders__date">
-                                        20.04.20
-                                    </div>
-                                </div>
-                                <div class="orders__row">
-                                    <div class="orders__price">
-                                        Стоимость:
-                                        <div class="orders__price-i">
-                                            670 UAH
-                                        </div>
-                                    </div>
-                                    <div class="orders__status">
-                                        Статус:
-                                        <div class="orders__status-i completed">
-                                            Завершен
-                                        </div>
-                                    </div>
-                                </div>
+                        <div class="head-tabs__nav-item swiper-slide">
+                            <a href="javascript:void(0);" class="head-tabs__nav-link">
+                                Отмененные
                             </a>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </main>
+
+            <div class="content-block content-block--orders">
+                <div class="swiper-container orders-content-js">
+                    <div class="orders--wrap swiper-wrapper">
+                        <div class="orders not-full-content container swiper-slide">
+                            <div class="orders__list orders__list-empty">
+                                <p>
+                                    У вас нет активных заказов
+                                </p>
+                            </div>
+                        </div>
+                        <div class="orders not-full-content container swiper-slide">
+                            <div class="orders__list">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <a href="./project.html" class="orders__item">
+                                            <div class="orders__row">
+                                                <div class="orders__name">
+                                                    Курсовой проект
+                                                    <div class="orders__id">
+                                                        ID: id-7739-626
+                                                    </div>
+                                                </div>
+                                                <div class="orders__date">
+                                                    10.06.20
+                                                </div>
+                                            </div>
+                                            <div class="orders__row">
+                                                <div class="orders__price">
+                                                    Стоимость:
+                                                    <div class="orders__price-i">
+                                                        1200 UAH
+                                                    </div>
+                                                </div>
+                                                <div class="orders__status">
+                                                    Статус:
+                                                    <div class="orders__status-i awaiting">
+                                                        Ожидает предоплаты
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <a href="#" class="orders__item">
+                                            <div class="orders__row">
+                                                <div class="orders__name">
+                                                    Эссе
+                                                    <div class="orders__id">
+                                                        ID: id-7739-703
+                                                    </div>
+                                                </div>
+                                                <div class="orders__date">
+                                                    12.05.20
+                                                </div>
+                                            </div>
+                                            <div class="orders__row">
+                                                <div class="orders__price">
+                                                    Стоимость:
+                                                    <div class="orders__price-i">
+                                                        350 UAH
+                                                    </div>
+                                                </div>
+                                                <div class="orders__status">
+                                                    Статус:
+                                                    <div class="orders__status-i completed">
+                                                        Завершен
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <a href="#" class="orders__item">
+                                            <div class="orders__row">
+                                                <div class="orders__name">
+                                                    Реферат
+                                                    <div class="orders__id">
+                                                        ID: id-8739-122
+                                                    </div>
+                                                </div>
+                                                <div class="orders__date">
+                                                    20.04.20
+                                                </div>
+                                            </div>
+                                            <div class="orders__row">
+                                                <div class="orders__price">
+                                                    Стоимость:
+                                                    <div class="orders__price-i">
+                                                        670 UAH
+                                                    </div>
+                                                </div>
+                                                <div class="orders__status">
+                                                    Статус:
+                                                    <div class="orders__status-i completed">
+                                                        Завершен
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <a href="#" class="orders__item">
+                                            <div class="orders__row">
+                                                <div class="orders__name">
+                                                    Эссе
+                                                    <div class="orders__id">
+                                                        ID: id-7739-703
+                                                    </div>
+                                                </div>
+                                                <div class="orders__date">
+                                                    12.05.20
+                                                </div>
+                                            </div>
+                                            <div class="orders__row">
+                                                <div class="orders__price">
+                                                    Стоимость:
+                                                    <div class="orders__price-i">
+                                                        350 UAH
+                                                    </div>
+                                                </div>
+                                                <div class="orders__status">
+                                                    Статус:
+                                                    <div class="orders__status-i completed">
+                                                        Завершен
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="orders not-full-content container swiper-slide">
+                            <div class="orders__list">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <a href="#" class="orders__item">
+                                            <div class="orders__row">
+                                                <div class="orders__name">
+                                                    Реферат
+                                                    <div class="orders__id">
+                                                        ID: id-8739-122
+                                                    </div>
+                                                </div>
+                                                <div class="orders__date">
+                                                    20.04.20
+                                                </div>
+                                            </div>
+                                            <div class="orders__row">
+                                                <div class="orders__price">
+                                                    Стоимость:
+                                                    <div class="orders__price-i">
+                                                        670 UAH
+                                                    </div>
+                                                </div>
+                                                <div class="orders__status">
+                                                    Статус:
+                                                    <div class="orders__status-i completed">
+                                                        Завершен
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <a href="#" class="orders__item">
+                                            <div class="orders__row">
+                                                <div class="orders__name">
+                                                    Реферат
+                                                    <div class="orders__id">
+                                                        ID: id-8739-122
+                                                    </div>
+                                                </div>
+                                                <div class="orders__date">
+                                                    20.04.20
+                                                </div>
+                                            </div>
+                                            <div class="orders__row">
+                                                <div class="orders__price">
+                                                    Стоимость:
+                                                    <div class="orders__price-i">
+                                                        670 UAH
+                                                    </div>
+                                                </div>
+                                                <div class="orders__status">
+                                                    Статус:
+                                                    <div class="orders__status-i completed">
+                                                        Завершен
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="orders__btn">
+                    <button class="orders__btn-i site-btn" data-toggle="modal" data-target=".add-order-js">
+                                <span>
+                                    Добавить заказ
+                                </span>
+                        @@include('../img/ico/white-plus-ico.svg')
+                    </button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+
 
     @@include('./modules/_footer.html')
-    <a href="javascript:void(0);" class="orders__plus-btn" data-toggle="modal" data-target=".add-order-js">
-        @@include('../img/ico/white-plus-ico.svg')
-    </a>
+    <!--<a href="javascript:void(0);" class="orders__plus-btn" data-toggle="modal" data-target=".add-order-js">-->
+        <!--@@include('../img/ico/white-plus-ico.svg')-->
+    <!--</a>-->
 
     </div>
 
